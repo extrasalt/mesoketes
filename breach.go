@@ -1,5 +1,8 @@
 package main
 
+//Defend takes a day as input and returns
+//the number of breaches for that particular day
+//while also changing the wall's properties
 func (c *City) Defend(d Day) int {
 	breachCount := 0
 	breachCount += IncrIfBreach(c.N, d.N)
@@ -14,6 +17,10 @@ func (c *City) Defend(d Day) int {
 	return breachCount
 }
 
+//IncrIfBreach compares two values and returns
+//whether or not the current value is smaller
+//than the next value. Ints used instead of bool
+//To facilitate incrementing the counter.
 func IncrIfBreach(current, atkStr int) int {
 	if current < atkStr {
 		return 1

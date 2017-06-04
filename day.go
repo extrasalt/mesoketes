@@ -1,5 +1,8 @@
 package main
 
+//CalculateMaxDamage calculates the max damage in any
+//Given day for each side of the wall
+//if there are two attacks on the same side, it sets the max
 func (d *Day) CalculateMaxDamage() {
 	for _, attack := range d.Attacks {
 		switch attack.Dir {
