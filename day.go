@@ -3,13 +3,13 @@ package main
 func (d *Day) CalculateMaxDamage() {
 	for _, attack := range d.Attacks {
 		switch attack.Dir {
-		case North:
+		case north:
 			d.N = max(d.N, attack.Strength)
-		case East:
+		case east:
 			d.E = max(d.E, attack.Strength)
-		case South:
+		case south:
 			d.S = max(d.S, attack.Strength)
-		case West:
+		case west:
 			d.W = max(d.W, attack.Strength)
 		}
 	}

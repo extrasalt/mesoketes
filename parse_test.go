@@ -7,28 +7,28 @@ func TestParseDirection(t *testing.T) {
 		in  string
 		out Direction
 	}{
-		{" N ", North},
-		{" S ", South},
-		{" E ", East},
-		{" W ", West},
+		{" N ", north},
+		{" S ", south},
+		{" E ", east},
+		{" W ", west},
 	}
 
 	for _, c := range directionTests {
-		if ParseDirection(c.in) != c.out {
+		if parseDirection(c.in) != c.out {
 			t.Errorf("Error in ParseDirection:%s is not %s", c.in, string(c.out))
 		}
 	}
 }
 
 func TestParseStrength(t *testing.T) {
-	if ParseStrength(" 3") != 3 {
+	if parseStrength(" 3") != 3 {
 		t.Errorf("ParseStrength fails")
 	}
 }
 
 func TestCreateAttack(t *testing.T) {
 	attack := CreateAttack("T1 - N - X - 2")
-	if attack.Dir != North {
+	if attack.Dir != north {
 		t.Errorf("Error setting direction")
 	}
 

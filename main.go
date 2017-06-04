@@ -24,18 +24,18 @@ type Attack struct {
 }
 
 const (
-	North = iota
-	East
-	South
-	West
+	north = iota
+	east
+	south
+	west
 )
 
 //City has a wall
 type City struct {
-	Wall
+	wall
 }
 
-type Wall struct {
+type wall struct {
 	BreachCount int //Total Number of breaches.
 	N           int //Northern Wall's strength
 	E           int //Eastern
@@ -45,5 +45,5 @@ type Wall struct {
 
 func main() {
 
-	fmt.Println(West)
+	fmt.Println(west)
 }

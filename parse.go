@@ -30,29 +30,29 @@ func CreateDay(input string) Day {
 func CreateAttack(input string) Attack {
 	atk := Attack{}
 	attributes := strings.Split(input, "-")
-	atk.Dir = ParseDirection(attributes[1])
-	atk.Strength = ParseStrength(attributes[3])
+	atk.Dir = parseDirection(attributes[1])
+	atk.Strength = parseStrength(attributes[3])
 	return atk
 }
 
-func ParseDirection(s string) Direction {
+func parseDirection(s string) Direction {
 	var d Direction
 
 	switch s {
 	case " N ":
-		d = North
+		d = north
 	case " E ":
-		d = East
+		d = east
 	case " S ":
-		d = South
+		d = south
 	case " W ":
-		d = West
+		d = west
 	}
 
 	return d
 }
 
-func ParseStrength(s string) int {
+func parseStrength(s string) int {
 	trimmedString := strings.Trim(s, " ")
 	str, err := strconv.Atoi(trimmedString)
 	if err != nil {
