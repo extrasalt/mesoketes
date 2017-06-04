@@ -23,7 +23,7 @@ func CreateDay(input string) Day {
 		a := CreateAttack(s)
 		d.Attacks = append(d.Attacks, a)
 	}
-
+	d.CalculateMaxDamage()
 	return d
 }
 
