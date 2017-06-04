@@ -34,11 +34,10 @@ type City struct {
 }
 
 type wall struct {
-	BreachCount int //Total Number of breaches.
-	N           int //Northern Wall's strength
-	E           int //Eastern
-	S           int //Southern
-	W           int //Western
+	N int //Northern Wall's strength
+	E int //Eastern
+	S int //Southern
+	W int //Western
 }
 
 func main() {
