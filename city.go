@@ -1,5 +1,17 @@
 package main
 
+//City has a wall
+type City struct {
+	wall
+}
+
+type wall struct {
+	N int //Northern Wall's strength
+	E int //Eastern
+	S int //Southern
+	W int //Western
+}
+
 //Defend takes a day as input and returns
 //the number of breaches for that particular day
 //while also changing the wall's properties

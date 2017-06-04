@@ -1,5 +1,30 @@
 package main
 
+//Each day has several attacks
+type Day struct {
+	Attacks []Attack
+	N       int
+	E       int
+	S       int
+	W       int
+}
+
+
+const (
+	north = iota
+	east
+	south
+	west
+)
+
+//Alias int to direction to create Direction constants
+type Direction int
+type Attack struct {
+	Dir      Direction
+	Strength int
+}
+
+
 //CalculateMaxDamage calculates the max damage in any
 //Given day for each side of the wall
 //if there are two attacks on the same side, it sets the max
