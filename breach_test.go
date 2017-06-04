@@ -19,13 +19,21 @@ func TestIncrIfBreach(t *testing.T) {
 }
 
 func TestDefend(t *testing.T) {
-	day := CreateDay("Day 1$ T1 - S - X - 4: T1 - N - X - 2: T3 - W - X - 3")
+	day := CreateDay("Day 1$ T1 - S - X - 4: T1 - S - X - 2: T3 - W - X - 3")
 
 	city := City{}
 
 	b := city.Defend(day)
 
-	if b != 3 {
-		t.Fatalf("Defend returns bad count: Expected 3, got %d", b)
+	if b != 2 {
+		t.Fatalf("Defend returns bad count: Expected 2, got %d", b)
+	}
+
+	if city.S != 4 {
+		t.Fatalf("city.S expected 4, got %d", city.S)
+	}
+
+	if city.W != 3 {
+		t.Fatalf("city.W expected 3, got %d", city.W)
 	}
 }
