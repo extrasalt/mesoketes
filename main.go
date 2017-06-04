@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //A battle consists of several days
 type Battle struct {
 	Days []Day
@@ -45,5 +43,4 @@ type wall struct {
 
 func main() {
 
-	fmt.Println(west)
 }
