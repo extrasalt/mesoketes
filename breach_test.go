@@ -26,14 +26,14 @@ func TestDefend(t *testing.T) {
 	b := city.Defend(day)
 
 	if b != 2 {
-		t.Fatalf("Defend returns bad count: Expected 2, got %d", b)
+		t.Errorf("Defend returns bad count: Expected 2, got %d", b)
 	}
 
 	if city.S != 4 {
-		t.Fatalf("city.S expected 4, got %d", city.S)
+		t.Errorf("city.S expected 4, got %d", city.S)
 	}
 
 	if city.W != 3 {
-		t.Fatalf("city.W expected 3, got %d", city.W)
+		t.Errorf("city.W expected 3, got %d", city.W)
 	}
 }
