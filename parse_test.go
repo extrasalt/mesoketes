@@ -19,3 +19,9 @@ func TestParseDirection(t *testing.T) {
 		}
 	}
 }
+
+func TestParseStrength(t *testing.T) {
+	if ParseStrength(" 3") != 3 {
+		t.Errorf("ParseStrength fails")
+	}
+}

@@ -53,7 +53,7 @@ func ParseDirection(s string) Direction {
 }
 
 func ParseStrength(s string) int {
-	trimmedString := strings.Trim("s", " ")
+	trimmedString := strings.Trim(s, " ")
 	str, err := strconv.Atoi(trimmedString)
 	if err != nil {
 		panic(err)
