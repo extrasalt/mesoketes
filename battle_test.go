@@ -25,10 +25,6 @@ func TestBattleRageOn(t *testing.T) {
 		t.Errorf("Expected 3 days in test case 3, got %d", len(battle3.Days))
 	}
 
-	if battle3.Days[1].E != 3 {
-		t.Errorf("Expected 4, got %d", battle3.Days[0].E)
-	}
-
 	for _, c := range breachCounts {
 		if c.exp != c.out {
 			t.Errorf("Battle RageOn: Expected %d got %d", c.exp, c.out)
