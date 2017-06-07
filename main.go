@@ -11,8 +11,14 @@ import (
 
 //Reads a file named source.txt and prints output to standard out
 func main() {
-	currentDir, _ := os.Getwd()
-	sourcePath := filepath.Join(currentDir, "/source.txt")
+	currentDir, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+
+	fileName := os.Args[1]
+
+	sourcePath := filepath.Join(currentDir, fileName)
 	source, err := os.Open(sourcePath)
 	defer source.Close()
 	if err != nil {
