@@ -1,11 +1,9 @@
 package main
 
-
-//A battle consists of several days
+//Battle consists of several days
 type Battle struct {
 	Days []Day
 }
-
 
 //RageOn imposes the battle over a city
 //This function returns the number of times
