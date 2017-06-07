@@ -9,14 +9,16 @@ func TestBattleRageOn(t *testing.T) {
 
 	battle3 := CreateBattle("Day 1$ T1 - E - X - 4; Day 2$ T1 - W - X - 3 : T2 - E - X - 3; Day 3$ T3 - N - X - 2: T2 - W - X - 4")
 
-	city := &City{}
+	city1 := &City{}
+	city2 := &City{}
+	city3 := &City{}
 	breachCounts := []struct {
 		out int
 		exp int
 	}{
-		{battle1.RageOn(city), 6},
-		{battle2.RageOn(city), 6},
-		{battle3.RageOn(city), 4},
+		{battle1.RageOn(city1), 6},
+		{battle2.RageOn(city2), 6},
+		{battle3.RageOn(city3), 4},
 	}
 
 	if len(battle3.Days) != 3 {
