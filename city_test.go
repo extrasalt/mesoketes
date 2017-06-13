@@ -21,7 +21,7 @@ func TestIncrIfBreach(t *testing.T) {
 }
 
 func TestDefend(t *testing.T) {
-	day := CreateDay("Day 1$ T1 - S - X - 4: T1 - S - X - 2: T3 - W - X - 3")
+	day := CreateDay("Day 1$ T1 - S - X - 4: T1 - S - X - 2: T3 - S - X - 3")
 
 	city := City{}
 
@@ -37,5 +37,17 @@ func TestDefend(t *testing.T) {
 
 	if city.W != 3 {
 		t.Errorf("city.W expected 3, got %d", city.W)
+	}
+}
+
+func TestWallReset(t *testing.T) {
+	day := CreateDay("Day 1$ T1 - S - X - 4: T1 - S - X - 2: T3 - W - X - 3")
+
+	city := City{}
+
+	_ = city.Defend(day)
+
+	if city.S != 0 {
+		t.Errorf("city.S expected to be zero but go %d", city.S)
 	}
 }
