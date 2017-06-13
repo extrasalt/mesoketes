@@ -7,7 +7,9 @@ func TestIncrIfBreach(t *testing.T) {
 	atkStr := 7
 	breachCount := 0
 
-	breachCount += IncrIfBreach(current, atkStr)
+	if IncrIfBreach(current, atkStr) {
+		breachCount += 1
+	}
 	if breachCount != 1 {
 		t.Errorf("Positive breach doesn't increment the counter")
 	}

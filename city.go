@@ -5,11 +5,16 @@ type City struct {
 	wall
 }
 
-type wall struct {
+type strength struct {
 	N int //Northern Wall's strength
 	E int //Eastern
 	S int //Southern
 	W int //Western
+}
+
+type wall struct {
+	strength
+	//Counter []int
 }
 
 //Defend takes a day as input and returns
@@ -17,10 +22,22 @@ type wall struct {
 //while also changing the wall's properties
 func (c *City) Defend(d Day) int {
 	breachCount := 0
-	breachCount += IncrIfBreach(c.N, d.N)
-	breachCount += IncrIfBreach(c.E, d.E)
-	breachCount += IncrIfBreach(c.S, d.S)
-	breachCount += IncrIfBreach(c.W, d.W)
+
+	dirs := []struct {
+		CityStrength int
+		DayStrength  int
+	}{
+		{c.N, d.N},
+		{c.E, d.E},
+		{c.S, d.S},
+		{c.W, d.W},
+	}
+
+	for _, dir := range dirs {
+		if IncrIfBreach(dir.CityStrength, dir.DayStrength) {
+			breachCount += 1
+		}
+	}
 	c.N = max(c.N, d.N)
 	c.S = max(c.S, d.S)
 	c.E = max(c.E, d.E)
@@ -33,10 +50,10 @@ func (c *City) Defend(d Day) int {
 //whether or not the current value is smaller
 //than the next value. Ints used instead of bool
 //To facilitate incrementing the counter.
-func IncrIfBreach(current, atkStr int) int {
+func IncrIfBreach(current, atkStr int) bool {
 	if current < atkStr {
-		return 1
+		return true
 	}
 
-	return 0
+	return false
 }
